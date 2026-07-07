@@ -159,7 +159,7 @@
                         <button type="button" onclick="goToStep(2)" id="stepCircle2" class="w-9 h-9 rounded-full bg-charcoal-100 text-charcoal-500 font-semibold text-xs flex items-center justify-center transition-all duration-300 ring-4 ring-transparent">
                             2
                         </button>
-                        <span id="stepLabel2" class="text-[10px] font-mono tracking-wider text-charcoal-400 mt-2 sm:block hidden uppercase">Lodging</span>
+                        <span id="stepLabel2" class="text-[10px] font-mono tracking-wider text-charcoal-400 mt-2 sm:block hidden uppercase">Dietary</span>
                     </div>
 
                     <!-- Step 3 -->
@@ -220,44 +220,14 @@
                     </div>
                 </div>
 
-                <!-- STEP 2: Lodging & Dining Selections -->
+                <!-- STEP 2: Dietary & Culinary Selections -->
                 <div id="step2Content" class="space-y-6 page-transition hidden">
                     <div>
-                        <h2 class="text-xl font-serif text-charcoal-800 tracking-tight" id="step2Heading">Lodging & Culinary Details</h2>
-                        <p class="text-xs text-charcoal-500 mt-1">Select your comfort tier. High-end boutique hotels are standard.</p>
+                        <h2 class="text-xl font-serif text-charcoal-800 tracking-tight" id="step2Heading">Culinary Details</h2>
+                        <p class="text-xs text-charcoal-500 mt-1">Please specify your dining preferences or dietary requirements so we can plan meals accordingly.</p>
                     </div>
 
                     <div class="space-y-5">
-                        <div>
-                            <span class="block text-[10px] font-mono tracking-widest text-charcoal-500 uppercase mb-3">Preferred Room Style *</span>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div onclick="selectAccommodation('shared')" id="lodgingShared" class="selection-card border-2 border-brandRed bg-brandRed/5 p-5 rounded-2xl cursor-pointer flex items-start gap-4 hover:border-brandRed transition-all">
-                                    <div class="mt-1 flex-shrink-0">
-                                        <div id="radioShared" class="w-5 h-5 rounded-full border-2 border-brandRed flex items-center justify-center">
-                                            <div class="w-2.5 h-2.5 rounded-full bg-brandRed"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-sm text-charcoal-800">Shared Double Room</h3>
-                                        <p class="text-xs text-charcoal-500 mt-1 leading-relaxed">Paired with another tripmate.</p>
-                                    </div>
-                                </div>
-
-                                <div onclick="selectAccommodation('private')" id="lodgingPrivate" class="selection-card border border-charcoal-200 bg-white/50 p-5 rounded-2xl cursor-pointer flex items-start gap-4 hover:border-brandRed transition-all">
-                                    <div class="mt-1 flex-shrink-0">
-                                        <div id="radioPrivate" class="w-5 h-5 rounded-full border border-charcoal-300 flex items-center justify-center">
-                                            <div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-sm text-charcoal-800">Private Suite Upgrade</h3>
-                                        <p class="text-xs text-charcoal-500 mt-1 leading-relaxed">Your own private space. Single supplement pricing applies.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="hidden" name="accommodation" id="accommodationInput" value="shared">
-                        </div>
-
                         <!-- Dietary Choices -->
                         <div class="space-y-1">
                             <label for="dietary" class="block text-[10px] font-mono tracking-widest text-charcoal-500 uppercase">Dietary Requirements</label>
@@ -283,34 +253,10 @@
                 <div id="step3Content" class="space-y-6 page-transition hidden">
                     <div>
                         <h2 class="text-xl font-serif text-charcoal-800 tracking-tight" id="step3Heading">Adventure Profile & Safety</h2>
-                        <p class="text-xs text-charcoal-500 mt-1">High elevations require physical awareness. Let us plan optimal trails for you.</p>
+                        <p class="text-xs text-charcoal-500 mt-1">High elevations require physical awareness. Please provide your passport and safety details.</p>
                     </div>
 
                     <div class="space-y-5">
-                        <div>
-                            <span class="block text-[10px] font-mono tracking-widest text-charcoal-500 uppercase mb-3">Preferred Trail Pace *</span>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                <div onclick="selectIntensity('moderate')" id="intensityMod" class="selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all">
-                                    <span class="text-xs font-mono text-brandRed font-bold mb-1">01</span>
-                                    <h4 class="font-bold text-xs text-charcoal-800">Scenic & Leisurely</h4>
-                                    <p class="text-[10px] text-charcoal-500 mt-1 leading-relaxed">Relaxed valley walks, ruin walks, slow photographic sessions.</p>
-                                </div>
-
-                                <div onclick="selectIntensity('active')" id="intensityActive" class="selection-card border border-charcoal-200 bg-white/50 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all">
-                                    <span class="text-xs font-mono text-charcoal-400 mb-1">02</span>
-                                    <h4 class="font-bold text-xs text-charcoal-800">Active Explorer</h4>
-                                    <p class="text-[10px] text-charcoal-500 mt-1 leading-relaxed">Full day walks, moderate stone paths, standard altitude walks.</p>
-                                </div>
-
-                                <div onclick="selectIntensity('challenging')" id="intensityChal" class="selection-card border border-charcoal-200 bg-white/50 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all">
-                                    <span class="text-xs font-mono text-charcoal-400 mb-1">03</span>
-                                    <h4 class="font-bold text-xs text-charcoal-800">Peak Trailblazer</h4>
-                                    <p class="text-[10px] text-charcoal-500 mt-1 leading-relaxed">High mountain passes, deep hikes (Rainbow Mt / Salkantay segments).</p>
-                                </div>
-                            </div>
-                            <input type="hidden" name="intensity" id="intensityInput" value="moderate">
-                        </div>
-
                         <!-- Passport Status -->
                         <div class="space-y-1">
                             <label for="passport" class="block text-[10px] font-mono tracking-widest text-charcoal-500 uppercase">Passport Expiration Status *</label>
@@ -358,7 +304,7 @@
                     </div>
 
                     <!-- Interactive Payment Options Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div onclick="selectPaymentMethod('zelle')" id="payZelle" class="selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-xl cursor-pointer text-center flex flex-col justify-between items-center hover:border-brandRed transition-all">
                             <span class="text-[10px] font-mono tracking-widest text-brandRed font-bold uppercase mb-1">Method A</span>
                             <span class="font-bold text-sm text-charcoal-800">Zelle</span>
@@ -369,12 +315,6 @@
                             <span class="text-[10px] font-mono tracking-widest text-charcoal-400 uppercase mb-1">Method B</span>
                             <span class="font-bold text-sm text-charcoal-800">Venmo</span>
                             <span class="text-[9px] text-charcoal-500 mt-1 block">Mobile App Payment</span>
-                        </div>
-
-                        <div onclick="selectPaymentMethod('wire')" id="payWire" class="selection-card border border-charcoal-200 bg-white/50 p-4 rounded-xl cursor-pointer text-center flex flex-col justify-between items-center hover:border-brandRed transition-all">
-                            <span class="text-[10px] font-mono tracking-widest text-charcoal-400 uppercase mb-1">Method C</span>
-                            <span class="font-bold text-sm text-charcoal-800">Bank Transfer</span>
-                            <span class="text-[9px] text-charcoal-500 mt-1 block">ACH / Wire Details</span>
                         </div>
                     </div>
 
@@ -399,16 +339,6 @@
                                 <button type="button" onclick="copyHandleText('@fbccasanova')" class="text-[10px] text-brandRed hover:underline font-bold uppercase tracking-wider">Copy</button>
                             </div>
                             <p class="text-[10px] text-charcoal-500">Include your legal name in your transaction note.</p>
-                        </div>
-
-                        <div id="wireDetails" class="space-y-2 hidden">
-                            <p class="text-charcoal-500 text-[10px] uppercase tracking-wider">Wire / ACH transfer details:</p>
-                            <div class="space-y-1.5 text-[11px] text-charcoal-600">
-                                <p><strong>Bank:</strong> BOA</p>
-                                <p><strong>Routing Number (ACH):</strong> 121000248</p>
-                                <p><strong>Account Number:</strong> *****6789</p>
-                                <p class="text-[10px] text-charcoal-500 pt-1">Reach out directly for our full routing table if sending an international wire.</p>
-                            </div>
                         </div>
                     </div>
 
@@ -497,8 +427,6 @@
 
         let currentStep = 1;
         const totalSteps = 4;
-        let selectedLodging = 'shared';
-        let selectedIntensity = 'moderate';
         let selectedPayment = 'zelle';
 
         window.onload = function () {
@@ -516,8 +444,6 @@
                     document.getElementById('emergencyName').value = parsed.emergencyName || '';
                     document.getElementById('emergencyPhone').value = parsed.emergencyPhone || '';
                     
-                    if (parsed.accommodation) selectAccommodation(parsed.accommodation);
-                    if (parsed.intensity) selectIntensity(parsed.intensity);
                     if (parsed.selectedPayment) selectPaymentMethod(parsed.selectedPayment);
                 } catch (e) {
                     console.error("Draft parsing issue", e);
@@ -575,8 +501,6 @@
                 passport: document.getElementById('passport').value,
                 emergencyName: document.getElementById('emergencyName').value,
                 emergencyPhone: document.getElementById('emergencyPhone').value,
-                accommodation: selectedLodging,
-                intensity: selectedIntensity,
                 selectedPayment: selectedPayment
             };
             localStorage.setItem('peru_draft_v4', JSON.stringify(draft));
@@ -708,82 +632,18 @@
             }
         }
 
-        function selectAccommodation(type) {
-            selectedLodging = type;
-            document.getElementById('accommodationInput').value = type;
-            
-            const cardShared = document.getElementById('lodgingShared');
-            const cardPrivate = document.getElementById('lodgingPrivate');
-            
-            const radioShared = document.getElementById('radioShared');
-            const radioPrivate = document.getElementById('radioPrivate');
-
-            if (type === 'shared') {
-                cardShared.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-5 rounded-2xl cursor-pointer flex items-start gap-4 hover:border-brandRed transition-all";
-                cardPrivate.className = "selection-card border border-charcoal-200 bg-white/50 p-5 rounded-2xl cursor-pointer flex items-start gap-4 hover:border-brandRed transition-all";
-                
-                radioShared.className = "w-5 h-5 rounded-full border-2 border-brandRed flex items-center justify-center";
-                radioShared.innerHTML = '<div class="w-2.5 h-2.5 rounded-full bg-brandRed"></div>';
-                
-                radioPrivate.className = "w-5 h-5 rounded-full border border-charcoal-300 flex items-center justify-center";
-                radioPrivate.innerHTML = '<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>';
-            } else {
-                cardShared.className = "selection-card border border-charcoal-200 bg-white/50 p-5 rounded-2xl cursor-pointer flex items-start gap-4 hover:border-brandRed transition-all";
-                cardPrivate.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-5 rounded-2xl cursor-pointer flex items-start gap-4 hover:border-brandRed transition-all";
-                
-                radioShared.className = "w-5 h-5 rounded-full border border-charcoal-300 flex items-center justify-center";
-                radioShared.innerHTML = '<div class="w-2.5 h-2.5 rounded-full bg-transparent"></div>';
-                
-                radioPrivate.className = "w-5 h-5 rounded-full border-2 border-brandRed flex items-center justify-center";
-                radioPrivate.innerHTML = '<div class="w-2.5 h-2.5 rounded-full bg-brandRed"></div>';
-            }
-            saveDraft();
-        }
-
-        function selectIntensity(level) {
-            selectedIntensity = level;
-            document.getElementById('intensityInput').value = level;
-
-            const mod = document.getElementById('intensityMod');
-            const act = document.getElementById('intensityActive');
-            const chal = document.getElementById('intensityChal');
-
-            mod.className = "selection-card border border-charcoal-200 bg-white/50 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all";
-            mod.children[0].className = "text-xs font-mono text-charcoal-400 mb-1";
-            
-            act.className = "selection-card border border-charcoal-200 bg-white/50 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all";
-            act.children[0].className = "text-xs font-mono text-charcoal-400 mb-1";
-            
-            chal.className = "selection-card border border-charcoal-200 bg-white/50 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all";
-            chal.children[0].className = "text-xs font-mono text-charcoal-400 mb-1";
-
-            if (level === 'moderate') {
-                mod.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all";
-                mod.children[0].className = "text-xs font-mono text-brandRed font-bold mb-1";
-            } else if (level === 'active') {
-                act.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all";
-                act.children[0].className = "text-xs font-mono text-brandRed font-bold mb-1";
-            } else if (level === 'challenging') {
-                chal.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-2xl cursor-pointer text-center flex flex-col items-center hover:border-brandRed transition-all";
-                chal.children[0].className = "text-xs font-mono text-brandRed font-bold mb-1";
-            }
-            saveDraft();
-        }
-
         function selectPaymentMethod(method) {
             selectedPayment = method;
             document.getElementById('selectedPaymentInput').value = method;
 
             const payZelle = document.getElementById('payZelle');
             const payVenmo = document.getElementById('payVenmo');
-            const payWire = document.getElementById('payWire');
 
             const zDetails = document.getElementById('zelleDetails');
             const vDetails = document.getElementById('venmoDetails');
-            const wDetails = document.getElementById('wireDetails');
 
             // Reset outline card formats
-            [payZelle, payVenmo, payWire].forEach(card => {
+            [payZelle, payVenmo].forEach(card => {
                 card.className = "selection-card border border-charcoal-200 bg-white/50 p-4 rounded-xl cursor-pointer text-center flex flex-col justify-between items-center hover:border-brandRed transition-all";
                 card.children[0].className = "text-[10px] font-mono tracking-widest text-charcoal-400 uppercase mb-1";
             });
@@ -791,7 +651,6 @@
             // Hide detail modules
             zDetails.classList.add('hidden');
             vDetails.classList.add('hidden');
-            wDetails.classList.add('hidden');
 
             if (method === 'zelle') {
                 payZelle.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-xl cursor-pointer text-center flex flex-col justify-between items-center hover:border-brandRed transition-all";
@@ -801,10 +660,6 @@
                 payVenmo.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-xl cursor-pointer text-center flex flex-col justify-between items-center hover:border-brandRed transition-all";
                 payVenmo.children[0].className = "text-[10px] font-mono tracking-widest text-brandRed font-bold uppercase mb-1";
                 vDetails.classList.remove('hidden');
-            } else if (method === 'wire') {
-                payWire.className = "selection-card border-2 border-brandRed bg-brandRed/5 p-4 rounded-xl cursor-pointer text-center flex flex-col justify-between items-center hover:border-brandRed transition-all";
-                payWire.children[0].className = "text-[10px] font-mono tracking-widest text-brandRed font-bold uppercase mb-1";
-                wDetails.classList.remove('hidden');
             }
             saveDraft();
         }
@@ -822,8 +677,6 @@
             const formData = new FormData(form);
             
             // Append explicit choice fields
-            formData.append('accommodation', selectedLodging);
-            formData.append('intensity', selectedIntensity);
             formData.append('selectedPayment', selectedPayment);
 
             const endpoint = BACKEND_ENDPOINT_CONFIG.trim();
@@ -879,8 +732,6 @@
             submitBtn.disabled = false;
             submitBtn.innerHTML = "Complete Reservation";
 
-            selectAccommodation('shared');
-            selectIntensity('moderate');
             selectPaymentMethod('zelle');
             goToStep(1);
         }
@@ -896,13 +747,13 @@
 
             const headers = [
                 "Full Name", "Email", "Phone",
-                "Accommodations", "Trail Level", "Dietary Style", "Allergies Details", 
+                "Dietary Style", "Allergies Details", 
                 "Emergency Contact", "Emergency Contact Phone", "Payment Choice"
             ];
             
             const rows = [
                 fullNameValue, emailValue, phoneValue,
-                selectedLodging, selectedIntensity, dietarySelect, dietarySpec, 
+                dietarySelect, dietarySpec, 
                 emergencyN, emergencyP, selectedPayment
             ].map(val => `"${(val || '').replace(/"/g, '""')}"`);
 
